@@ -8,6 +8,10 @@ docker volume create <nombre volumen>
 ```
 
 ### Crear el volumen nombrado: vol-postgres
+
+```
+docker volume create vol-postgres
+```
 # COMPLETAR CON EL COMANDO
 
 ## MOUNTPOINT
@@ -39,6 +43,10 @@ docker run -d --name <nombre contenedor> --mount type=volume,src=<nombre >,dst=<
 
 
 ### Crear la red net-drupal de tipo bridge
+
+```
+docker network create net-drupal
+```
 # COMPLETAR CON EL COMANDO
 
 ### Crear un servidor postgres vinculado a la red net-drupal, completar la ruta del contenedor
@@ -55,6 +63,13 @@ docker run -d --name client-postgres --publish published=9500,target=80 -e PGADM
 ### Usar el cliente postgres para conectarse al servidor postgres, para la conexión usar el nombre del servidor en lugar de la dirección IP.
 
 ### Crear los volúmenes necesarios para drupal, esto se puede encontrar en la documentación
+
+```
+docker volume create vol-modules
+docker volume create vol-profiles
+docker volume create vol-sites
+docker volume create vol-themes
+```
 ### COMPLETAR CON LOS COMANDOS
 
 ### Crear el contenedor server-drupal vinculado a la red, usar la imagen drupal, y vincularlo a los volúmenes nombrados
@@ -63,6 +78,8 @@ docker run -d --name server-drupal --publish published=9700,target=80 -v <nombre
 ```
 
 ### Ingrese al server-drupal y siga el paso a paso para la instalación.
+<img width="1919" height="917" alt="image" src="https://github.com/user-attachments/assets/f2c78f65-6868-4b65-990b-27976f7c215b" />
+
 # COMPLETAR CON UNA CAPTURA DE PANTALLA DEL PASO 4
 
 _La instalación puede tomar varios minutos, mientras espera realice un diagrama de los contenedores que ha creado en este apartado._
